@@ -8,7 +8,7 @@ depth 25
 smtbmc --presat --unroll boolector
 
 [script]
-connect_rpc -exec nmigen-rpc yosys minerva.core.Minerva
+connect_rpc -exec amaranth-rpc yosys minerva.core.Minerva
 read_verilog -sv -formal dmemcheck.sv
 prep -nordff -top testbench
 
