@@ -53,18 +53,22 @@ module rvfi_wrapper (
 		.with_muldiv        (1),
 `endif
 
+`ifdef MINERVA_WITH_ICACHE
 		.with_icache        (1),
+`endif
 		.icache_nways       (2),
 		.icache_nlines      (2),
 		.icache_nwords      (4),
-		.icache_base        (32'h1000),
+		.icache_base        (32'h2000),
 		.icache_limit       (32'h4000),
 
+`ifdef MINERVA_WITH_DCACHE
 		.with_dcache        (1),
+`endif
 		.dcache_nways       (2),
 		.dcache_nlines      (2),
 		.dcache_nwords      (4),
-		.dcache_base        (32'h1000),
+		.dcache_base        (32'h2000),
 		.dcache_limit       (32'h4000),
 	) uut (
 		.clk                (clock),
